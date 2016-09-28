@@ -15,9 +15,9 @@ int main()
 			getchar();
 			scanf("%s", graph[i]);
 		}
-		for(row = 0, flag = 0; row < H-1; row++)
+		for(row = 0, flag = 0; row < H; row++)
 		{
-			for(col = 0; col < W-1; col++)
+			for(col = 0; col < W; col++)
 			{
 				if(graph[row][col] == '@')
 				{
@@ -34,7 +34,7 @@ int main()
 }
 void move(int X, int Y)
 {
-	if(graph[X][Y] == '#' || graph[X][Y] == '\0' || X < 0 || Y < 0) return;
+	if(X == H || X < 0 || Y < 0 || graph[X][Y] == '#' || graph[X][Y] == '\0') return;
 	printf("ans = %d\n", ans);
 	graph[X][Y] = '#';
 	ans += 1;
